@@ -1,11 +1,11 @@
-# RMV Voting Platform Documentation
+# RMV Voting Tool Documentation
 
 ## Introduction
 
-This Voting Platform is a decentralized application (DApp) designed to facilitate transparent and secure governance. Built on Ethereum using Solidity smart contracts and a React frontend, the platform allows members to create proposals, vote on them, and delegate voting power. Membership is represented by non-transferable Soulbound Tokens (SBTs), and voting power is managed through Reputation Tokens (REP) with delegation capabilities.
+This Voting Tool is a decentralized application (DApp) designed to facilitate transparent and secure governance. Built on Ethereum using Solidity smart contracts and a React frontend, the Tool allows members to create proposals, vote on them, and delegate voting power. Membership is represented by non-transferable Soulbound Tokens (SBTs), and voting power is managed through Reputation Tokens (REP) with delegation capabilities.
 
 ### Project Description
-The platform consists of three smart contracts:
+The Tool consists of three smart contracts:
 - **SBT.sol**: Manages soulbound tokens to represent membership.
 - **RepToken.sol**: Handles REP tokens for voting power, using OpenZeppelin's `ERC20Votes` for delegation.
 - **Voting.sol**: Manages proposal creation, voting, and REP minting for members.
@@ -91,7 +91,7 @@ The contracts were written in Solidity, leveraging OpenZeppelin’s libraries fo
 Key challenges included ensuring cross-contract interactions (e.g., `SBT` calling `Voting.mintRepForSbtHolder`) and proper delegation mechanics.
 
 ### 3. Frontend Development
-The frontend was built using React (`App.js`) to interact with the contracts via ethers.js. Key components:
+The frontend was built using React to interact with the contracts via ethers.js. Key components:
 - **Wallet Connection**:
   ```javascript
   const connectWallet = async () => {
@@ -125,12 +125,11 @@ The frontend was built using React (`App.js`) to interact with the contracts via
   await repToken.initializeVotingContract(voting.address);
   await sbt.initializeVotingContract(voting.address);
   ```
-- **Frontend Integration**: Updated `App.js` with contract addresses and ABIs, ensuring seamless interaction.
 - **Testing**: Ran the DApp locally (`npm start`) to verify end-to-end functionality, from wallet connection to voting.
 
 ## Instructions on Setting Up the Project
 
-To set up and run the DAO Voting Platform, follow these steps. The project requires Node.js, Hardhat, and MetaMask.
+To set up and run the Voting Tool, follow these steps. The project requires Node.js, Hardhat, and MetaMask.
 
 ### Prerequisites
 - **Node.js and npm**: Install from [nodejs.org](https://nodejs.org/) (v16 or later).
