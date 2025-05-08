@@ -10,7 +10,7 @@ The platform consists of three smart contracts:
 - **RepToken.sol**: Handles REP tokens for voting power, using OpenZeppelin's `ERC20Votes` for delegation.
 - **Voting.sol**: Manages proposal creation, voting, and REP minting for members.
 
-The frontend (`App.js`) provides a user-friendly interface for connecting a wallet, creating proposals, voting, and delegating voting power. Key features include:
+The frontend provides a user-friendly interface for connecting a wallet, creating proposals, voting, and delegating voting power. Key features include:
 - Membership-based access (SBT holders only).
 - Proposal creation with customizable voting durations.
 - For/Against voting with delegated voting power.
@@ -18,9 +18,9 @@ The frontend (`App.js`) provides a user-friendly interface for connecting a wall
 - Real-time proposal status updates in the UI.
 
 ### Pros
-- **Transparency**: All actions (proposal creation, voting, delegation) are recorded on-chain, ensuring auditability.
-- **Flexibility**: Delegation allows members to assign voting power to trusted parties, enhancing participation.
-- **User-Friendly**: The React frontend simplifies interactions with a clean UI, showing active/completed proposals and voting power.
+- **Transparency**: All actions (proposal creation, voting, delegation) are recorded on-chain.
+- **Flexibility**: Delegation allows members to assign voting power to trusted parties.
+- **User-Friendly**: The React frontend shows active/completed proposals and voting power.
 - **Incentivization**: Minting REP for voting encourages active participation.
 
 ### Cons
@@ -39,9 +39,8 @@ This project is intended for educational purposes, demonstrating blockchain-base
 
 ## Real life cases (inspirations)
 - **UniSwap DAO;**
-- **MakerDAO;**
-- **Compound Finance**: In 2023, Compound DAO voted to add support for new collateral types, with COMP holders proposing and voting on-chain. The process used delegated voting and was fully transparent. (https://www.sciencedirect.com/science/article/pii/S2096720924000216#se0030)
-- **Aragon-Based DAOs**: In 2024, an Aragon-based DAO (e.g., a community fund) voted to allocate treasury funds for a new project, using token-weighted voting and delegation. (https://blog.colony.io/8-essential-voting-mechanisms-in-daos/)
+- **Compound Finance**: Compound DAO voted to add support for new collateral types, with COMP holders proposing and voting on-chain. The process used delegated voting and was fully transparent. (https://www.sciencedirect.com/science/article/pii/S2096720924000216#se0030)
+- **Aragon-Based DAOs**: An Aragon-based DAO (e.g., a community fund) voted to allocate treasury funds for a new project, using token-weighted voting and delegation. (https://blog.colony.io/8-essential-voting-mechanisms-in-daos/)
 
 ## Description of the Stages of Work
 
@@ -234,12 +233,3 @@ cd decentralized-voting
    - **Create Proposal**: Enter a description and duration, then click “Create Proposal.”
    - **Vote**: Click “Vote For” or “Vote Against” on active proposals (or do nothing for a tie).
    - **Delegate**: Enter a delegate address and click “Delegate.”
-
-### Troubleshooting
-- **Contract Deployment Fails**: Ensure `hardhat.config.js` is correct and dependencies are installed.
-- **Frontend Errors**: Verify contract addresses and ABIs in `App.js`. Check MetaMask is connected to Hardhat.
-- **UI Not Updating**: Refresh the page; Ensure `loadContractData` is called after transactions.
-
-## Conclusion
-
-This Voting Platform is a robust demonstration of decentralized governance, integrating smart contracts and a React frontend. By following the setup instructions, you can deploy and interact with the DApp locally.
